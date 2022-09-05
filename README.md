@@ -38,6 +38,6 @@ transform = transforms.Compose([transforms.ToTensor(),
 - **'PATH_TO_STORE_X'** - the root directory of dataset.
 - **download** - downloads the dataset from the internet and puts it in root directory.  
 - **train** - creates the dataset from  train-images-idx3-ubyte/t10k-images-idx3-ubyte. 
-
+[DataLoader](https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader) Combines a dataset and a sampler, and provides an **iterable** over the given dataset.
 
 

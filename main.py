@@ -1,7 +1,7 @@
 import numpy as np
 
 def main():
-    print("hi")
+    print("hi inon")
 
 if __name__ == '__main__':
     main()

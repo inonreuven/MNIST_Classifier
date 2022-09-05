@@ -42,7 +42,7 @@ transform = transforms.Compose([transforms.ToTensor(),
 [DataLoader](https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader) Combines a dataset and a sampler, and provides an **iterable** over the given dataset:
 - **dataset** – dataset from which to load the data.
 - **batch_size** – how many samples per batch to load.
-- **shuffle** – set to True to have the data reshuffled at every epoch.
+- **shuffle** – reshuffled the data every epoch.
 
 ```
 from torchvision import transforms, datasets

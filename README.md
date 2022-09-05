@@ -45,10 +45,12 @@ transform = transforms.Compose([transforms.ToTensor(),
 - **shuffle** – set to True to have the data reshuffled at every epoch.
 
 ```
-    trainset = datasets.MNIST('PATH_TO_STORE_TRAINSET', download=True, train=True, transform=transform)
-    valset = datasets.MNIST('PATH_TO_STORE_TESTSET', download=True, train=False, transform=transform)
-    trainloader = torch.utils.data.DataLoader(trainset, batch_size=64, shuffle=True)
-    valloader = torch.utils.data.DataLoader(valset, batch_size=64, shuffle=True)
+from torchvision import transforms, datasets
+
+trainset = datasets.MNIST('PATH_TO_STORE_TRAINSET', download=True, train=True, transform=transform)
+valset = datasets.MNIST('PATH_TO_STORE_TESTSET', download=True, train=False, transform=transform)
+trainloader = torch.utils.data.DataLoader(trainset, batch_size=64, shuffle=True)
+valloader = torch.utils.data.DataLoader(valset, batch_size=64, shuffle=True)
 ```
 
 

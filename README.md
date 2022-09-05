@@ -33,3 +33,6 @@ transform = transforms.Compose([transforms.ToTensor(),
                                     ])
     
 ```
+###  2.2 load MNIST dataset
+
+

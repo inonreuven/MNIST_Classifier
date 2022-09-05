@@ -34,5 +34,10 @@ transform = transforms.Compose([transforms.ToTensor(),
     
 ```
 ###  2.2 load MNIST dataset
+[datasets](https://pytorch.org/vision/stable/datasets.html) provides the MNIST built-in dataset:
+- 'PATH_TO_STORE_X' - the root directory of dataset.
+- download - downloads the dataset from the internet and puts it in root directory.  
+- train - creates the dataset from  train-images-idx3-ubyte/t10k-images-idx3-ubyte. 
+
 
 

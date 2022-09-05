@@ -30,14 +30,26 @@ from torchvision import transforms
 
 transform = transforms.Compose([transforms.ToTensor(),
                                     transforms.Normalize((0.5,), (0.5,)),
-                                    ])
-    
+                                    ]) 
 ```
+
 ###  2.2 load MNIST dataset
 [datasets](https://pytorch.org/vision/stable/datasets.html) provides the MNIST built-in dataset:
 - **'PATH_TO_STORE_X'** - the root directory of dataset.
 - **download** - downloads the dataset from the internet and puts it in root directory.  
 - **train** - creates the dataset from  train-images-idx3-ubyte/t10k-images-idx3-ubyte. 
-[DataLoader](https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader) Combines a dataset and a sampler, and provides an **iterable** over the given dataset.
+[DataLoader](https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader) Combines a dataset and a sampler, and provides an **iterable** over the given dataset:
+- **dataset** – dataset from which to load the data.
+- **batch_size** – how many samples per batch to load.
+- **shuffle** – set to True to have the data reshuffled at every epoch.
+
+```
+    trainset = datasets.MNIST('PATH_TO_STORE_TRAINSET', download=True, train=True, transform=transform)
+    valset = datasets.MNIST('PATH_TO_STORE_TESTSET', download=True, train=False, transform=transform)
+    trainloader = torch.utils.data.DataLoader(trainset, batch_size=64, shuffle=True)
+    valloader = torch.utils.data.DataLoader(valset, batch_size=64, shuffle=True)
+```
+
+
 
 

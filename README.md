@@ -20,3 +20,16 @@ MNIST contains 70,000 grayscale images (28x28 pixels) of handwritten digits: 60,
 import torch
 import torchvision 
 ```
+[transforms](https://pytorch.org/tutorials/beginner/basics/transforms_tutorial.html) provides manipulation of the data to suit it for training.  
+- **ToTensor** - a torch.Tensor is a multi-dimensional matrix containing elements of a single data type. [transforms.ToTensor](https://pytorch.org/vision/main/generated/torchvision.transforms.ToTensor.html) Convert a PIL Image or numpy.ndarray to tensor.
+- **Normalize** - normalize a tensor image with mean and standard deviation.
+- **Compose** - composes several transforms together.
+
+```
+from torchvision import transforms
+
+transform = transforms.Compose([transforms.ToTensor(),
+                                    transforms.Normalize((0.5,), (0.5,)),
+                                    ])
+    
+```

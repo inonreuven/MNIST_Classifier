@@ -16,9 +16,7 @@ MNIST contains 70,000 grayscale images (28x28 pixels) of handwritten digits: 60,
 - **Torch** - the [torch](https://pytorch.org/docs/stable/torch.html) package contains data structures for multi-dimensional tensors and defines mathematical operations over these tensors.
 - **TorchVision** - the [torchvision](https://pytorch.org/vision/stable/index.html#torchvision) package (part of the PyTorch project) consists of popular datasets, model architectures, and common image transformations for computer vision.
 
-```
-function test() {
-  console.log("notice the blank line before this function?");
-the }[
-](https://pytorch.org/docs/stable/index.html)
-The torch package contains data structures for multi-dimensional tensors and defines mathematical operations over these tensors.
+'''
+import torch
+import torchvision 
+'''

@@ -141,7 +141,12 @@ to build a NN, i need to address some basics concepts:
 3. Loss function
 4. Optimizer 
 
+### 3.1 Layered architecture
+1. Input layer - the input layer will read a full image consists of 784 pixels. Each neuron (enetry) is reading a specific pixel., multiply it by a W (weights), adding a b (bias) and push it to the activation function. 
+2. Hidden layers - Two hidden layers, 128 entries and 64. The Wx multiplication is a matrix-vector calculation. The W matrix have 128 weights for each pixel, 784 in total. Thus, W matrix size = (128,784). The next hidden layer shopuld have a W matrix of 64 rows and 128 columns. Both layers should have b vector with equal size as the output (128 and 64).
+3. Output layer - after passing the hidden layers, the NN have 64 values that corrisponding to 0-9 digits. The output layer will read the vector to convert all the 64 values into 10 values.        
 
+The total network will look like this:
 
 
 

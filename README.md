@@ -91,7 +91,7 @@ batch_size: 64
 ```
 
 ### 2.4 Exploring the data
-displaying the images using [matplotlib.pyplot](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.html). Since **tensor** type is iterable, i used **iter** and **next** to create an iterator object to read the first shuffled batch. Each batch from the training set consists of 64 images and 64 labels:
+displaying the images using [matplotlib.pyplot](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.html). Since **tensor** type is iterable, i used **iter** and **next** to create an iterator object to read the first shuffled batch. Each batch from the training set consists of 64 images and 64 labels. To explor data integrity, i also verified the digits distribution in a random batch:   
 
 ```
 import matplotlib.pyplot as plt
@@ -121,6 +121,10 @@ def data_visualization(data):
         plt.axis('off')
         plt.imshow(images[index-1].numpy().squeeze(), cmap='gray_r')
         count[labels[index-1]] += 1
+
+
+data_visualization(trainloader)
+data_integrity(trainloader)
 
 ```
 

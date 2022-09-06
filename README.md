@@ -74,7 +74,7 @@ data_valdiation(trainloader)
 
 ```
 
-dataset.data holds MNIST images. The data should be **Tensor** type with length of 60,000 were each element should be **uint8** with 28x28 pixels.
+**dataset.data** holds MNIST images. The data should be **Tensor** type with length of 60,000 were each element should be **uint8** with 28x28 pixels.
 
 
 

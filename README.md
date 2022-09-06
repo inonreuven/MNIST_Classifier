@@ -131,6 +131,7 @@ the output will be 64 random images from the 1st batch in 8 rows and columns and
 
 ![Figure_1](https://user-images.githubusercontent.com/57630290/188659826-7c8f9fb2-3339-4eb7-98b8-f19a6c997288.png)
 
+![Figure_2](https://user-images.githubusercontent.com/57630290/188660446-bd089961-c5f1-4ba6-b061-5b5719481925.png)
 
 
 

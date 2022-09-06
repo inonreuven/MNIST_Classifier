@@ -69,8 +69,8 @@ def data_valdiation(dataloader):
                                                                                 len(dataloader),
                                                                                 dataloader.batch_size))
 
-
-
+transforms_valdiation(trainset)
+data_valdiation(trainloader)
 
 ```
 

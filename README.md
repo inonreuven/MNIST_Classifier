@@ -4,6 +4,7 @@ Digit recognition with multilayer perceptron classifier using PyTorch
 ## Contents
 1. Objective
 2. Dataset
+3. Neural Network
 
 
 ## 1. Objective
@@ -132,6 +133,14 @@ the output will be 64 random images from the 1st batch in 8 rows and columns and
 ![Figure_1](https://user-images.githubusercontent.com/57630290/188660788-51cf2701-950d-453c-aa8d-9f361e617e23.png)
 
 ![Figure_2](https://user-images.githubusercontent.com/57630290/188660446-bd089961-c5f1-4ba6-b061-5b5719481925.png)
+
+## 3. Neural Network
+to build a NN, i need to address some basics concepts:
+1. Layered architecture
+2. Activation functions
+3. Loss function
+4. Optimizer 
+
 
 
 

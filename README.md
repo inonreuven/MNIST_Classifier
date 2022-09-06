@@ -75,7 +75,20 @@ data_valdiation(trainloader)
 ```
 
 **dataset.data** holds MNIST images. The data should be **Tensor** type with length of 60,000 were each element should be **uint8** with 28x28 pixels.
+**dataloader** is a **DataLoader** type with size of 60,000. The batch_size is 64, thus dataloader length should be 60,000/64 = 937.5 (the last batch size is 32)
 
+```
+<class 'torchvision.datasets.mnist.MNIST'>
+type: <class 'torch.Tensor'>
+dtype: torch.uint8
+number of images: 60000
+image_size: 28
+
+type: <class 'torch.utils.data.dataloader.DataLoader'>
+dataset_size: 60000
+number of batches: 938
+batch_size: 64
+```
 
 
 

@@ -97,24 +97,30 @@ displaying the images using [matplotlib.pyplot](https://matplotlib.org/stable/ap
 import matplotlib.pyplot as plt
 import numpy as np
 
-def data_visualization(data):
+def data_integrity(data):
     data_iter = iter(data)
     images, labels = next(data_iter)
-    figure = plt.figure(figsize=(10,10))
-    count = [0]*10
+    count = [0] * 10
     digits = [i for i in range(10)]
-    for index in range(1, data.batch_size+1):
-        plt.subplot(8, 8, index)
-        plt.axis('off')
-        plt.imshow(images[index-1].numpy().squeeze(), cmap='gray_r')
-        count[labels[index-1]] += 1
+    for label in labels:
+        count[label] += 1
     figure = plt.figure(figsize=(8, 8))
     bars = plt.bar(digits, count, color='maroon', width=0.6)
     plt.xticks(np.arange(10), digits)
     for bar in bars:
         yval = bar.get_height()
-        plt.text(bar.get_x(), yval + .05, yval)
+        plt.text(bar.get_x()+ .25, yval + .2, yval)
 
+
+def data_visualization(data):
+    data_iter = iter(data)
+    images, labels = next(data_iter)
+    figure = plt.figure(figsize=(10,10))
+    for index in range(1, data.batch_size+1):
+        plt.subplot(8, 8, index)
+        plt.axis('off')
+        plt.imshow(images[index-1].numpy().squeeze(), cmap='gray_r')
+        count[labels[index-1]] += 1
 
 ```
 

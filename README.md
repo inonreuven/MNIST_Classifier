@@ -147,6 +147,7 @@ to build a NN, i need to address some basics concepts:
 3. Output layer - after passing the hidden layers, the NN have 64 values that corrisponding to 0-9 digits. The output layer will read the vector to convert all the 64 values into 10 values.        
 
 The total network will look like this:
+![1_HWhBextdDSkxYvz0kEMTVg](https://user-images.githubusercontent.com/57630290/188683133-892eebbb-4bd4-40de-8dd4-83a60f42443f.png)
 
 
 

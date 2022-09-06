@@ -57,11 +57,11 @@ valloader = torch.utils.data.DataLoader(valset, batch_size=64, shuffle=True)
 
 
 ```
-def transforms_valdiation(dataloader):
-        print('type: {}\ndtype: {}\nnumber of images: {}\nimage_size: {}\n' .format(type(dataloader.data),
-                                                                            dataloader.data.dtype,
-                                                                            dataloader.data.shape[0],
-                                                                            dataloader.data.shape[1]))
+def transforms_valdiation(dataset):
+        print('type: {}\ndtype: {}\nnumber of images: {}\nimage_size: {}\n' .format(type(dataset.data),
+                                                                            dataset.data.dtype,
+                                                                            dataset.data.shape[0],
+                                                                            dataset.data.shape[1]))
 
 def data_valdiation(dataloader):
     print('type: {}\ndataset_size: {}\nnumber of batches: {}\nbatch_size: {}\n'.format(type(dataloader),
@@ -73,6 +73,9 @@ transforms_valdiation(trainset)
 data_valdiation(trainloader)
 
 ```
+
+dataset.data holds MNIST images. The data should be **Tensor** type with length of 60,000 were each element should be **uint8** with 28x28 pixels.
+
 
 
 

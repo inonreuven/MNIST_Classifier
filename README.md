@@ -39,7 +39,7 @@ transform = transforms.Compose([transforms.ToTensor(),
 - **download** - downloads the dataset from the internet and puts it in root directory.  
 - **train** - creates the dataset from  train-images-idx3-ubyte/t10k-images-idx3-ubyte. 
 
-[DataLoader](https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader) Combines a dataset and a sampler, and provides an **iterable** over the given dataset:
+[DataLoader](https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader) combines a dataset and a sampler, and provides an **iterable** over the given dataset:
 - **dataset** – dataset from which to load the data.
 - **batch_size** – how many samples per batch to load.
 - **shuffle** – reshuffled the data every epoch.
@@ -52,6 +52,31 @@ valset = datasets.MNIST('PATH_TO_STORE_TESTSET', download=True, train=False, tra
 trainloader = torch.utils.data.DataLoader(trainset, batch_size=64, shuffle=True)
 valloader = torch.utils.data.DataLoader(valset, batch_size=64, shuffle=True)
 ```
+
+###  2.3 transforms verification
+
+
+```
+def transforms_valdiation(dataloader):
+        print('type: {}\ndtype: {}\nnumber of images: {}\nimage_size: {}\n' .format(type(dataloader.data),
+                                                                            dataloader.data.dtype,
+                                                                            dataloader.data.shape[0],
+                                                                            dataloader.data.shape[1]))
+
+def data_valdiation(dataloader):
+    print('type: {}\ndataset_size: {}\nnumber of batches: {}\nbatch_size: {}\n'.format(type(dataloader),
+                                                                                len(dataloader.dataset),
+                                                                                len(dataloader),
+                                                                                dataloader.batch_size))
+
+
+
+
+```
+
+
+
+
 
 
 

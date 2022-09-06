@@ -129,7 +129,7 @@ data_integrity(trainloader)
 ```
 the output will be 64 random images from the 1st batch in 8 rows and columns and a bar plot (x-axis 0-9 digits and y-axis is the count of each digits in the current batch):
 
-[alt text](Figure_1.png)
+[alt text](D:\MNIST_Classifier\Figure_1.png)
 
 
 

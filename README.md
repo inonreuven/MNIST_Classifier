@@ -89,6 +89,8 @@ number of batches: 938
 batch_size: 64
 ```
 
+### 2.4 Exploring the data
+
 
 
 

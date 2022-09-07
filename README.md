@@ -8,7 +8,9 @@ Digit recognition with multilayer perceptron classifier using PyTorch.
 
 
 ## 1. Objective
-This project aims to develop a **handwritten digit classifier** on [MNIST dataset](http://yann.lecun.com/exdb/mnist/) and a step-by-step guide.
+This project aims to:
+1. Develop a **handwritten digit classifier** on [MNIST dataset](http://yann.lecun.com/exdb/mnist/) and a 
+2. Step-by-step guide.
 
 ## 2. Dataset
 MNIST contains 70,000 grayscale images (28x28 pixels) of handwritten digits: 60,000 for training and 10,000 for testing. 
@@ -186,10 +188,12 @@ linear transformation step: 1
 input: 784
 output: 128
 W-matrix: torch.Size([128, 784])
+
 linear transformation step: 2
 input: 128
 output: 64
 W-matrix: torch.Size([64, 128])
+
 linear transformation step: 3
 input: 64
 output: 10
@@ -197,6 +201,7 @@ W-matrix: torch.Size([10, 64])
 ```
 the output as expected - first neuron layer holds 1 full image of 784 pixels and the first hidden layer outputs 128 values. Each value is a sum of all the weights multiplied by the corrisponding pixel. the next hidden layer is reading the 128 values in each neuron after multiplication with the new weights. The output is 64 values as an input to the last linear operation, and the output is 10 values corrisponding to 10 digits. 
 
+### Loss function 
 **cross entropy** - The cross entropy is the negative log of the **Sofmax function**.
 
 

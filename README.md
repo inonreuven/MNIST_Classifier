@@ -265,7 +265,10 @@ the training code:
     plot_loss(epochs_dic)
 
 ```
+the forward function includes flattening the images vector, set gradients to zero and model prediction.
+the backward function includes the loss computation, loss.bacwards() and the optimizer step.   
 
+the output: 
 
 
 

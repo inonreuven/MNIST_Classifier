@@ -1,5 +1,5 @@
 # MNIST_Classifier
-Digit recognition with multilayer perceptron classifier using PyTorch 
+Digit recognition with multilayer perceptron classifier using PyTorch.  
 
 ## Contents
 1. Objective
@@ -8,7 +8,7 @@ Digit recognition with multilayer perceptron classifier using PyTorch
 
 
 ## 1. Objective
-This project aims to develop a **handwritten digit classifier** on [MNIST dataset](http://yann.lecun.com/exdb/mnist/).
+This project aims to develop a **handwritten digit classifier** on [MNIST dataset](http://yann.lecun.com/exdb/mnist/) and a step-by-step guide.
 
 ## 2. Dataset
 MNIST contains 70,000 grayscale images (28x28 pixels) of handwritten digits: 60,000 for training and 10,000 for testing. 
@@ -142,12 +142,26 @@ to build a NN, i need to address some basics concepts:
 4. Optimizer 
 
 ### 3.1 Layered architecture
-1. Input layer - the input layer will read a full image consists of 784 pixels. Each neuron (enetry) is reading a specific pixel., multiply it by a W (weights), adding a b (bias) and push it to the activation function. 
-2. Hidden layers - Two hidden layers, 128 entries and 64. The Wx multiplication is a matrix-vector calculation. The W matrix have 128 weights for each pixel, 784 in total. Thus, W matrix size = (128,784). The next hidden layer shopuld have a W matrix of 64 rows and 128 columns. Both layers should have b vector with equal size as the output (128 and 64).
-3. Output layer - after passing the hidden layers, the NN have 64 values that corrisponding to 0-9 digits. The output layer will read the vector to convert all the 64 values into 10 values.        
+I created a Two hidden layers architecture: one input layer, two hidden layers and one ouput. The first layer's neurons are reading the image, passing the pixels to the first hidden layer after multiplication with the pixels values. The hidden layers will add bias to each entery, sum all the results and push it to the activaqtion functions. The output layer is passing the 10 values (number of classifications = 0-9 digits) to the Loss function. Thus, the size of the output layer is 10.           
+I build the NN with [Torch.NN](https://pytorch.org/docs/stable/nn.html), with sequential container. The forward() method of Sequential accepts any input and forwards it to the first module it contains. It then “chains” outputs to inputs sequentially for each subsequent module, finally returning the output of the last module.   
+
+
+1. Input layer - the input layer will read the full image (consists 784 pixels) and each neuron is connected to all the neurons in the first hidden layer.  
+2. Hidden layers - Two hidden layers with 128 entries and 64 each. The Wx multiplication is a matrix-vector calculation. The W-matrix have 128 weights for each pixel. Thus, W matrix size = (128,784) with 128 neurons and 784 enteries. The next hidden layer shopuld have a W matrix of 64 rows and 128 columns. 
+3. Output layer - after the hidden layers, the NN have 64 values that corrisponding to 0-9 digits. The output layer will read the vector to convert all the 64 values into 10 values.        
 
 The total network will look like this:
 ![1_HWhBextdDSkxYvz0kEMTVg](https://user-images.githubusercontent.com/57630290/188683133-892eebbb-4bd4-40de-8dd4-83a60f42443f.png)
+
+the [torch.nn](https://pytorch.org/docs/stable/nn.html) contains the [Linear](https://pytorch.org/docs/stable/generated/torch.nn.Linear.html) applies a linear transformation to the incoming data.
+### 3.2 Activation functions
+**ReLU function** - ReLU(x) = max(0,x).
+
+
+
+**cross entropy** - The cross entropy is the negative log of the **Sofmax function**.
+
+
 
 
 

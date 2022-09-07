@@ -9,7 +9,7 @@ Digit recognition with multilayer perceptron classifier using PyTorch.
 
 ## 1. Objective
 This project aims to:
-1. Develop a **handwritten digit classifier** on [MNIST dataset](http://yann.lecun.com/exdb/mnist/) and a 
+1. Develop a **handwritten digit classifier** on [MNIST dataset](http://yann.lecun.com/exdb/mnist/) 
 2. Step-by-step guide.
 
 ## 2. Dataset

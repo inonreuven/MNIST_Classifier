@@ -159,6 +159,13 @@ The [torch.nn](https://pytorch.org/docs/stable/nn.html) contains the [Linear](ht
 ```
 from torch import nn
 
+def neural_network_validation(model):
+    print('total modules: {}\n'.format(len(model._modules)))
+    for key in model._modules.keys():
+        if model._modules[key]._get_name() is not 'ReLU':
+            dim = model._modules[key].weight.shape
+            trans_num = 1 + (3-int(key)) % 3
+            print("linear transformation step: {}\ninput: {}\noutput: {}\nW-matrix: {}\n".format(trans_num, dim[1], dim[0], dim))
 
 input_size = 784
 hidden_sizes = [128, 64]
@@ -169,7 +176,26 @@ model = nn.Sequential(nn.Linear(input_size, hidden_sizes[0]),
                     nn.Linear(hidden_sizes[0], hidden_sizes[1]),
                     nn.ReLU(),
                     nn.Linear(hidden_sizes[1], output_size))
+neural_network_validation(model)    
+
 ```
+**output:**
+```
+total modules: 5
+linear transformation step: 1
+input: 784
+output: 128
+W-matrix: torch.Size([128, 784])
+linear transformation step: 2
+input: 128
+output: 64
+W-matrix: torch.Size([64, 128])
+linear transformation step: 3
+input: 64
+output: 10
+W-matrix: torch.Size([10, 64])
+```
+
 
 
 **cross entropy** - The cross entropy is the negative log of the **Sofmax function**.

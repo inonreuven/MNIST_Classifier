@@ -217,6 +217,7 @@ loss = criterion(output, labels)
 loss_function_validation(output, loss):
 
 ```
+i used the .view() operation to flatten out each image before sending it inside the neural network.
 **output:**
 
 ```
@@ -225,8 +226,22 @@ number of classes: 10
 total loss: 2.309812545776367
 ```
 
+### 3.3 Optimizer
+[optim.SGD](https://pytorch.org/docs/stable/generated/torch.optim.SGD.html) implements stochastic gradient descent. The implementation of SGD with Momentum:
+```
+v(t+1) = m * v(t) + g(t+1)
+P(t+1) = P(t) - lr * v(t+1) 
+```
+- **model.parameters()** (=P(t)) - every iteration we update the parameters.    
+- **lr** - factor for the gradient's influence on the parameter's change.  
+- **momentum** - factor for the influence of velocity.    
+each image from the 64 images in the output, is holding 10 scores between 0-9. The loss function is reading each image seperatly.   
 
+```
+from torch import nn, optim
 
+optimizer = optim.SGD(model.parameters(), lr=0.003, momentum=0.9)
+```
 
 
 

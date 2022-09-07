@@ -270,5 +270,6 @@ the backward function includes the loss computation, loss.bacwards() and the opt
 
 the output: 
 
+![Figure_3](https://user-images.githubusercontent.com/57630290/188895873-5994a6ea-b864-4905-9899-45eba66a16bb.png)
 
 

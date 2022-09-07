@@ -142,7 +142,7 @@ to build a NN, i need to address some basics concepts:
 4. Optimizer 
 
 ### 3.1 Layered architecture
-I created a Two hidden layers architecture: one input layer, two hidden layers and one ouput. The first layer's neurons are reading the image, passing the pixels to the first hidden layer after multiplication with the pixels values. The hidden layers will add bias to each entery, sum all the results and push it to the activaqtion functions. The output layer is passing the 10 values (number of classifications = 0-9 digits) to the Loss function. Thus, the size of the output layer is 10.           
+I created a Two hidden layers architecture: one input layer, two hidden layers and one ouput. The first layer's neurons are reading the image, passing the pixels to the first hidden layer after multiplication of the pixels with the weights. The hidden layers will add bias to each entery, sum all the results and push it to the activaqtion functions. The output layer is passing the 10 values (number of classifications = 0-9 digits) to the Loss function. Thus, the size of the output layer is 10.           
 I build the NN with [Torch.NN](https://pytorch.org/docs/stable/nn.html), with sequential container. The forward() method of Sequential accepts any input and forwards it to the first module it contains. It then “chains” outputs to inputs sequentially for each subsequent module, finally returning the output of the last module.   
 
 
@@ -153,10 +153,23 @@ I build the NN with [Torch.NN](https://pytorch.org/docs/stable/nn.html), with se
 The total network will look like this:
 ![1_HWhBextdDSkxYvz0kEMTVg](https://user-images.githubusercontent.com/57630290/188683133-892eebbb-4bd4-40de-8dd4-83a60f42443f.png)
 
-the [torch.nn](https://pytorch.org/docs/stable/nn.html) contains the [Linear](https://pytorch.org/docs/stable/generated/torch.nn.Linear.html) applies a linear transformation to the incoming data.
+The [torch.nn](https://pytorch.org/docs/stable/nn.html) contains the [Linear](https://pytorch.org/docs/stable/generated/torch.nn.Linear.html) module which applies a linear transformation to the incoming data. After the linear operation, we can push the sum to the activation function.
 ### 3.2 Activation functions
 **ReLU function** - ReLU(x) = max(0,x).
+```
+from torch import nn
 
+
+input_size = 784
+hidden_sizes = [128, 64]
+output_size = 10
+
+model = nn.Sequential(nn.Linear(input_size, hidden_sizes[0]),
+                    nn.ReLU(),
+                    nn.Linear(hidden_sizes[0], hidden_sizes[1]),
+                    nn.ReLU(),
+                    nn.Linear(hidden_sizes[1], output_size))
+```
 
 
 **cross entropy** - The cross entropy is the negative log of the **Sofmax function**.

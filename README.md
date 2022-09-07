@@ -195,8 +195,7 @@ input: 64
 output: 10
 W-matrix: torch.Size([10, 64])
 ```
-
-
+the output as expected - first neuron layer holds 1 full image of 784 pixels and the first hidden layer outputs 128 values. Each value is a sum of all the weights multiplied by the corrisponding pixel. the next hidden layer is reading the 128 values in each neuron after multiplication with the new weights. The output is 64 values as an input to the last linear operation, and the output is 10 values corrisponding to 10 digits. 
 
 **cross entropy** - The cross entropy is the negative log of the **Sofmax function**.
 

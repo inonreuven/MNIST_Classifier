@@ -234,7 +234,7 @@ P(t+1) = P(t) - lr * v(t+1)
 ```
 - **model.parameters()** (=P(t)) - every iteration we update the parameters.    
 - **lr** - factor for the gradient's influence on the parameter's change.  
-- **momentum** - factor for the influence of velocity.    
+- **momentum** - (=m) factor for the influence of velocity.    
 each image from the 64 images in the output, is holding 10 scores between 0-9. The loss function is reading each image seperatly.   
 
 ```
@@ -242,6 +242,30 @@ from torch import nn, optim
 
 optimizer = optim.SGD(model.parameters(), lr=0.003, momentum=0.9)
 ```
+i used the optim.zero_grad() to set all gradients to zero before running a new batch and optim.step() after computing the Loss.
+the training code: 
+
+```
+    time0 = time()
+    epochs = 15
+    epochs_dic = {}
+    for e in range(epochs):
+        running_loss = 0
+        for images, labels in trainloader:
+            images = images.view(images.shape[0], -1)
+            optimizer.zero_grad()
+            output = model(images)
+            loss = criterion(output, labels)
+            loss.backward()
+            optimizer.step()
+            running_loss += loss.item()
+        else:
+            epochs_dic[e]= running_loss / len(trainloader)
+    print("\nTraining Time (in minutes) =", (time() - time0) / 60)
+    plot_loss(epochs_dic)
+
+```
+
 
 
 

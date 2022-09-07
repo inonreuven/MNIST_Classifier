@@ -205,16 +205,25 @@ the output as expected - first neuron layer holds 1 full image of 784 pixels and
 **cross entropy** - The cross entropy is the negative log of the **Sofmax function**.
 
 ```
+def loss_function_validation(input, loss):
+    print('number of images: {}\nnumber of classes: {}\ntotal loss: {}'.format(len(input), len(input[0]), loss))
+
 images, labels = next(iter(trainloader))
 images = images.view(images.shape[0], -1)
 criterion = nn.CrossEntropyLoss()
 output = model(images)
 loss = criterion(output, labels)
 
+loss_function_validation(output, loss):
+
 ```
+**output:**
 
-
-
+```
+number of images: 64
+number of classes: 10
+total loss: 2.309812545776367
+```
 
 
 

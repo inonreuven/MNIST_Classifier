@@ -5,6 +5,8 @@ Digit recognition with multilayer perceptron classifier using PyTorch.
 1. Objective
 2. Dataset
 3. Neural Network
+4. Training
+5. Verification 
 
 
 ## 1. Objective
@@ -242,6 +244,7 @@ from torch import nn, optim
 
 optimizer = optim.SGD(model.parameters(), lr=0.003, momentum=0.9)
 ```
+## Training 
 i used the optim.zero_grad() to set all gradients to zero before running a new batch and optim.step() after computing the Loss.
 the training code: 
 
@@ -271,5 +274,8 @@ the backward function includes the loss computation, loss.bacwards() and the opt
 the output: 
 
 ![Figure_3](https://user-images.githubusercontent.com/57630290/188895873-5994a6ea-b864-4905-9899-45eba66a16bb.png)
+
+## Verification 
+i am using no_grad() since i don't need to optimize my model any more, and i can test my accuracy.
 
 

@@ -160,6 +160,7 @@ The total network will look like this:
 The [torch.nn](https://pytorch.org/docs/stable/nn.html) contains the [Linear](https://pytorch.org/docs/stable/generated/torch.nn.Linear.html) module which applies a linear transformation to the incoming data. After the linear operation, we can push the sum to the activation function.
 ### 3.2 Activation functions
 **ReLU function** - ReLU(x) = max(0,x).
+**Softmax function** - softmax(x) = exp(x)/exp(x).sum()
 ```
 from torch import nn
 
@@ -268,14 +269,7 @@ the training code:
     plot_loss(epochs_dic)
 
 ```
-the forward function includes flattening the images vector, set gradients to zero and model prediction.
-the backward function includes the loss computation, loss.bacwards() and the optimizer step.   
 
-the output: 
+output: 
 
 ![Figure_3](https://user-images.githubusercontent.com/57630290/188895873-5994a6ea-b864-4905-9899-45eba66a16bb.png)
-
-## Verification 
-i am using no_grad() since i don't need to optimize my model any more, and i can test my accuracy.
-
-
